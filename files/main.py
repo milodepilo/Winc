@@ -12,16 +12,15 @@ zip_path = os.path.join(os.getcwd(), 'files\data.zip')
 def main():
     clean_cache()
     cache_zip(zip_path, cache_path)
-    print(cached_files())
-    print(find_password(cached_files()))
+    print(find_password(cached_files()))    
 
 
 def clean_cache():
-        try:
-            os.mkdir(cache_path)
-        except FileExistsError:            
-            for f in os.listdir(cache_path):
-                os.remove(os.path.join(cache_path, f))
+    try:
+        os.mkdir(cache_path)
+    except FileExistsError:            
+        for f in os.listdir(cache_path):
+            os.remove(os.path.join(cache_path, f))
 
 
 def cache_zip(zip_path, cache_path):
